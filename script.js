@@ -1,16 +1,21 @@
 const myLibrary = [];
 
-function Book(title , author , pages , status){
+const div = document.createElement('div')
+
+function Book(title, author, pages, read ){
     this.title = title,
     this.author = author,
     this.pages = pages,
-    this.status = status
+    this.isRead = false
 }
 
-function addBookToLibrary(newBook){
-    myLibrary.push(newBook)
+function addBookToLibrary(bookName){
+    myLibrary.push(bookName)
 }
 
-const harryPotter = new Book("Harry Potter" , "J K Rowling" , 123 , "read")
+
+
+harryPotter = new Book ('Harry Potter', 'J K Rowling', 230 , 'read')
 
 addBookToLibrary(harryPotter)
+
