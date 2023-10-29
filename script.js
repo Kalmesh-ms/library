@@ -1,6 +1,6 @@
 const myLibrary = [];
 
-const bookDiv = document.createElement('div')
+
 const bookContainer = document.querySelector('.grid-container')
 
 function Book(title, author, pages, read  ){
@@ -15,13 +15,12 @@ function addBookToLibrary(bookName){
 }
 
 function displayBook(books){
+    const bookDiv = document.createElement('div')
     bookDiv.textContent = `${books.title}, 
     ${books.author}, ${books.pages},  ${books.read}`
     bookDiv.classList.add('book')
     bookContainer.appendChild(bookDiv)
 }
-
-
 
 harryPotter = new Book ('Harry Potter', 'J K Rowling', 230 , 'Read')
 atomicHabits = new Book ('Atomic Habits',  'James Clear', 234 , "Read")
