@@ -2,6 +2,7 @@ const myLibrary = [];
 
 
 const bookContainer = document.querySelector('.grid-container')
+const addBtn = document.querySelector('.add > button')
 
 function Book(title, author, pages, read  ){
     this.title = title,
@@ -28,4 +29,5 @@ atomicHabits = new Book ('Atomic Habits',  'James Clear', 234 , "Read")
 addBookToLibrary(harryPotter)
 displayBook(harryPotter)
 addBookToLibrary(atomicHabits)
-displayBook(atomicHabits)
+
+addBtn.onclick =() => displayBook(atomicHabits)
