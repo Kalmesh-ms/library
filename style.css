@@ -22,10 +22,10 @@ div.header h1{
 .grid-container{
     overflow-y:auto ;
     display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(100px , 250px));
-    grid-template-rows : repeat(auto-fit , minmax(200px, 250px));
+    grid-template-columns: repeat(auto-fit , minmax(200px , 230px));
+    grid-template-rows : repeat(auto-fit , minmax(250px, 250px));
     gap: 40px 80px;
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(39, 37, 37);
     padding: 50px;      
     box-sizing: border-box;
     height: 100%;
@@ -61,3 +61,8 @@ div.book{
     height: 60px;
     width: 60px;    
 }
+
+::backdrop {
+    background-color: grey;
+}
+  
