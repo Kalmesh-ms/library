@@ -29,7 +29,7 @@ atomicHabits = new Book ('Atomic Habits',  'James Clear', 234 , "Read")
 addBookToLibrary(harryPotter)
 displayBook(harryPotter)
 addBookToLibrary(atomicHabits)
-displayBook(atomicHabits)
+
 
 
 const dialog = document.querySelector("dialog");
@@ -42,6 +42,4 @@ addBtn.addEventListener("click", () => {
 });
 
 // "Close" button closes the dialog
-closeButton.addEventListener("click", () => {
-  dialog.close();
-});
+

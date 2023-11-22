@@ -23,7 +23,7 @@ div.header h1{
     overflow-y:auto ;
     display: grid;
     grid-template-columns: repeat(auto-fit , minmax(200px , 230px));
-    grid-template-rows : repeat(auto-fit , minmax(250px, 250px));
+    grid-template-rows : repeat(auto-fit , minmax(200px, 250px));
     gap: 40px 80px;
     background-color: rgb(39, 37, 37);
     padding: 50px;      
@@ -65,4 +65,14 @@ div.book{
 ::backdrop {
     background-color: grey;
 }
-  
+
+dialog{
+    background-color: rgba(0, 0, 0, 0.614);
+    color: whitesmoke;
+}
+
+form {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}

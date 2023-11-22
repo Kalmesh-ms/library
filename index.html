@@ -18,8 +18,21 @@
         <div class="grid-container">    
         </div>
         <dialog>
-            <button autofocus>Close</button>
-            <p>This modal dialog has a groovy backdrop!</p>
+            <form action="#" method="post">
+                <label for="book_name">TITLE : </label>
+                <input type="text" id="book_name" placeholder="Harry Potter" name="title">
+
+                <label for="book_author">AUTHOR : </label>
+                <input type="text" id="book_author" placeholder="J K Rowling" name="author">
+
+                <label for="book_pages">PAGES : </label>
+                <input type="number" id="book_pages" placeholder="766" name="pages">
+
+                <label for="read">Read</label>
+                <input type="checkbox" id="read" name="readStatus">
+
+                <button>Submit</button>
+            </form>
         </dialog>
         
     </div>
