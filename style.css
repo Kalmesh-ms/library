@@ -63,7 +63,8 @@ div.book{
 }
 
 ::backdrop {
-    background-color: grey;
+    background-color: black;
+    opacity: 0.8;
 }
 
 dialog{
@@ -71,8 +72,17 @@ dialog{
     color: whitesmoke;
 }
 
-form {
-    height: 200px;
+.bookDetails {
+    width: 300px;
+    height: 300px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    justify-content: space-around;
+}
+
+.bookDetails > div {
+    display: flex;
+    justify-content: space-between;
 }

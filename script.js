@@ -36,10 +36,36 @@ const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
 
+
+
 // "Show the dialog" button opens the dialog modally
 addBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
-// "Close" button closes the dialog
+
+const submitButton = document.querySelector('.submitButton')
+const title = document.querySelector('#book_name')
+const author = document.querySelector('#book_author')
+const pages = document.querySelector('#book_pages')
+const read = document.querySelector('#read')
+
+submitButton.addEventListener('click', submitButtonClick );
+
+function submitButtonClick(event){
+    let bookTitle = title.value;
+    let bookAuthor = author.value;
+    let bookPages = pages.value;
+    let bookRead = read.checked ? "Read" : "Not Read";
+
+    if (bookTitle && bookAuthor && bookPages )
+    {
+        let newBook = new Book (bookTitle, bookAuthor, bookPages, bookRead)
+        addBookToLibrary(newBook);
+        displayBook(newBook);
+        dialog.close();
+    }
+    else return
+    event.preventDefault();
+}
 
