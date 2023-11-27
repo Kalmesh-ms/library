@@ -15,12 +15,34 @@ function addBookToLibrary(bookName){
     myLibrary.push(bookName)
 }
 
-function displayBook(books){
+function displayBook(books, bool ){
     const bookDiv = document.createElement('div')
-    bookDiv.textContent = `${books.title}, 
-    ${books.author}, ${books.pages},  ${books.read}`
+    const readBtn = document.createElement('button')
+    const DelBtn = document.createElement('button')
+    DelBtn.textContent = 'Delete'
+    readBtn.textContent = bool ? "Read" : "Unread" ;
+    readBtn.classList.value = bool ? 'read' : '';
+    bookDiv.textContent = ` " ${books.title} " by
+    ${books.author}, ${books.pages}`
     bookDiv.classList.add('book')
     bookContainer.appendChild(bookDiv)
+    bookDiv.appendChild(readBtn)
+    bookDiv.appendChild(DelBtn)
+    readBtn.addEventListener('click',function(event){
+        if(event.target.textContent == 'Unread'){
+            event.target.textContent = 'Read'
+            this.classList.value = 'read'
+            
+        }
+        else {
+            event.target.textContent = 'Unread'
+            event.target.classList.remove('read')
+        }
+
+    })
+    DelBtn.addEventListener('click', function(event){
+        bookContainer.removeChild(this.parentElement)
+    })
 }
 
 harryPotter = new Book ('Harry Potter', 'J K Rowling', 230 , 'Read')
@@ -31,11 +53,9 @@ displayBook(harryPotter)
 addBookToLibrary(atomicHabits)
 
 
-
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
-
 
 
 // "Show the dialog" button opens the dialog modally
@@ -56,16 +76,18 @@ function submitButtonClick(event){
     let bookTitle = title.value;
     let bookAuthor = author.value;
     let bookPages = pages.value;
-    let bookRead = read.checked ? "Read" : "Not Read";
+    let bookRead = read.checked ? "Read" : "Unread";
 
-    if (bookTitle && bookAuthor && bookPages )
+
+
+
+    if (bookTitle && bookAuthor && bookPages)
     {
         let newBook = new Book (bookTitle, bookAuthor, bookPages, bookRead)
         addBookToLibrary(newBook);
-        displayBook(newBook);
+        displayBook(newBook , read.checked);
         dialog.close();
     }
     else return
     event.preventDefault();
 }
-

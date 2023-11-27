@@ -22,21 +22,24 @@
                 <div class="bookDetails">
                     <div class="bookTitle">
                         <label for="book_name">TITLE </label>
-                        <input type="text" id="book_name" placeholder="Harry Potter" name="title" required minlength="3" maxlength="30">
+                        <input type="text" id="book_name" placeholder="Harry Potter" name="title"  minlength="1" maxlength="50" required >
                     </div>
                     <div class="bookAuthor">
                         <label for="book_author">AUTHOR </label>
-                        <input type="text" id="book_author" placeholder="J K Rowling" name="author" required>
+                        <input type="text" id="book_author" placeholder="J K Rowling" name="author" minlength="1" maxlength="30" required >
                     </div>
                     <div class="bookPages">
                         <label for="book_pages">PAGES </label>
-                        <input type="number" id="book_pages" placeholder="766" name="pages" required>
+                        <input type="number" id="book_pages" placeholder="766" name="pages" max="10000" required>
                     </div>
                     <div class="readStatus">
                         <label for="read">READ </label>
                         <input type="checkbox" id="read" name="readStatus">
                     </div>
-                    <button type="submit" class="submitButton">Submit</button>
+                    <div id="buttons">
+                        <button class="close">Cancel</button>
+                        <button type="submit" class="submitButton">Submit</button>
+                    </div>
                 </div>
 
             </form>
