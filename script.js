@@ -23,7 +23,7 @@ function displayBook(books, bool ){
     readBtn.textContent = bool ? "Read" : "Unread" ;
     readBtn.classList.value = bool ? 'read' : '';
     bookDiv.textContent = ` " ${books.title} " by
-    ${books.author}, ${books.pages}`
+    ${books.author}, ${books.pages} Pages`
     bookDiv.classList.add('book')
     bookContainer.appendChild(bookDiv)
     bookDiv.appendChild(readBtn)
@@ -62,6 +62,10 @@ const closeButton = document.querySelector("dialog button");
 addBtn.addEventListener("click", () => {
   dialog.showModal();
 });
+
+closeButton.addEventListener('click', ()=>{
+    dialog.close();
+})
 
 
 const submitButton = document.querySelector('.submitButton')
