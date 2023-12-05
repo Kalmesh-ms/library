@@ -40,7 +40,7 @@ function displayBook(books, bool ){
         }
 
     })
-    DelBtn.addEventListener('click', function(event){
+    DelBtn.addEventListener('click', function(){
         bookContainer.removeChild(this.parentElement)
     })
 }
@@ -63,7 +63,8 @@ addBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
-closeButton.addEventListener('click', ()=>{
+closeButton.addEventListener('click', (event)=>{
+    event.preventDefault();
     dialog.close();
 })
 
